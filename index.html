@@ -39,16 +39,22 @@ header.nav{
   background:color-mix(in srgb, var(--bg) 82%, transparent);
   border-bottom:1px solid var(--line);
 }
-.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:1080px; margin:0 auto;}
-.brand{font-family:var(--mono); font-weight:700; letter-spacing:-0.02em; font-size:15px;}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 24px; max-width:1080px; margin:0 auto;}
+.brand{font-family:var(--mono); font-weight:700; letter-spacing:-0.02em; font-size:15px; flex-shrink:0;}
 .brand span{color:var(--accent);}
-.nav-links{display:flex; gap:24px; font-size:13px; color:var(--sub); font-family:var(--mono);}
-.nav-links a{text-decoration:none; transition:color .15s;}
+.nav-links{display:flex; gap:24px; font-size:13px; color:var(--sub); font-family:var(--mono); flex-wrap:nowrap;}
+.nav-links a{text-decoration:none; transition:color .15s; white-space:nowrap;}
 .nav-links a:hover{color:var(--text);}
 .cta-btn{
   font-family:var(--mono); font-size:12px; font-weight:700; text-decoration:none;
   background:var(--accent); color:#0b0d10; padding:9px 16px; border-radius:100px;
-  white-space:nowrap;
+  white-space:nowrap; flex-shrink:0;
+}
+@media (max-width:720px){
+  .nav-inner{padding:14px 16px;}
+  .nav-links{display:none;}
+  .brand{font-size:13px;}
+  .cta-btn{font-size:11px; padding:8px 13px;}
 }
 
 /* HERO */
@@ -216,6 +222,26 @@ h2{font-size:clamp(28px,4vw,42px); letter-spacing:-0.02em; margin:0 0 12px; font
 .contact-links .pill{border-color:rgba(255,255,255,.35); color:#fff;}
 .contact-links .pill.solid{background:#fff; color:#221a5e;}
 footer.foot{padding:36px 0; text-align:center; color:var(--sub); font-family:var(--mono); font-size:12px;}
+
+/* MOBILE CONSISTENCY PASS */
+@media (max-width:680px){
+  .wrap{padding:0 18px;}
+  .hero{padding:64px 0 40px;}
+  section{padding:56px 0;}
+  .sec-head{margin-bottom:32px;}
+  h1{margin-bottom:18px;}
+  .hero-sub{font-size:16px; margin-bottom:28px;}
+  .eyebrow{margin-bottom:16px;}
+  .market-strip{margin-top:24px; padding-top:20px; gap:14px;}
+  .case{padding:22px; border-radius:16px; margin-bottom:20px;}
+  .case-steps{gap:18px;}
+  .shots{gap:10px; margin-top:18px;}
+  .result-strip{gap:18px; margin-top:20px; padding-top:18px;}
+  .contact-card{padding:40px 24px; border-radius:20px;}
+  .tool-grid{grid-template-columns:repeat(2,1fr);}
+  .tl-item{padding-bottom:28px; padding-left:20px;}
+  .stats{padding:24px 0;}
+}
 </style>
 </head>
 <body>
@@ -482,7 +508,9 @@ footer.foot{padding:36px 0; text-align:center; color:var(--sub); font-family:var
   <div class="tool-grid reveal">
     <div class="tool">Apollo.io</div>
     <div class="tool">LinkedIn Sales Nav</div>
+    <div class="tool">LinkedIn Helper</div>
     <div class="tool">Clay</div>
+    <div class="tool">BuiltWith</div>
     <div class="tool">Make.com</div>
     <div class="tool">HubSpot</div>
     <div class="tool">Pipedrive</div>
